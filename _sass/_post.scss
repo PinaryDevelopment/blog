@@ -1,0 +1,56 @@
+.post {
+  blockquote {
+    background-color: $light-grey;
+    border-left: 5px solid $primary;
+    font-size: 18px;
+    font-style: italic;
+    margin: 14px 0;
+    padding: 5px 0 5px 14px;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  p + p {
+    margin-top: 14px;
+  }
+
+  aside {
+    background-color: $light-primary;
+    border-bottom: 1px solid $primary;
+    border-top: 1px solid $primary;
+    font-size: 18px;
+    font-style: italic;
+    margin: 16px 0;
+    padding: 10px 0;
+    text-align: center;
+  }
+
+  code {
+    color: $red;
+  }
+
+  :not(pre) > code {
+    text-decoration: underline;
+  }
+
+  pre {
+    background-color: #efefef;
+    border-bottom: 1px solid #c25;
+    border-left: 5px solid #c25;
+    border-right: 5px solid #c25;
+    border-top: 1px solid #c25;
+    margin: 14px 0;
+    padding: 0 14px;
+  }
+
+  hr {
+    margin: 14px 0;
+  }
+
+  a {
+    color: $grey;
+    text-decoration: underline dashed;
+  }
+}

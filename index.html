@@ -1,12 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Pinary Development's Blog</title>
-</head>
-<body>
-    blog coming soon...
-</body>
-</html>
+---
+layout: default
+---
+
+<ul>
+    {% for post in site.posts %}
+    <li>
+        <a href="{{ post.url }}">{{ post.title }}</a>
+    </li>
+    {% endfor %}
+</ul>

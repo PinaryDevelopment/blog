@@ -1,0 +1,79 @@
+header {
+  background-color: $black;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.33);
+  display: flex;
+  padding: 14px;
+
+  nav {
+    font-size: 24px;
+  }
+
+  .brand {
+    &.name {
+      color: $white;
+
+      &:hover {
+        color: $primary;
+      }
+    }
+  }
+
+
+  .begin {
+    align-items: center;
+    display: flex;
+  }
+
+  .end {
+    display: flex;
+    flex-basis: 108px;
+    justify-content: space-around;
+
+    svg {
+      fill: $white;
+      height: 25px;
+
+      &.stack-overflow:hover {
+        .so-base {
+            fill: $stack-overflow-gray;
+        }
+
+        .so-stack {
+          fill: $stack-overflow-orange;
+        }
+      }
+
+      &.github:hover {
+        path {
+          fill: purple;
+        }
+      }
+
+      &.rss:hover {
+        path {
+          fill: $primary;
+        }
+      }
+    }
+  }
+}
+
+main {
+  flex-grow: 1;
+  flex-shrink: 0;
+  padding: 14px;
+}
+
+footer {
+  align-items: center;
+  background-color: $black;
+  color: $white;
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  white-space: nowrap;
+
+  .name {
+    color: $primary;
+  }
+}

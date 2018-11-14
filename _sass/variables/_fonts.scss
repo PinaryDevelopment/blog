@@ -1,0 +1,12 @@
+$main-font-name: 'Poly';
+$fancy-font-name: 'Stalemate';
+
+@font-face {
+  font-family: $main-font-name;
+  src: url('/assets/fonts/Poly/Poly-Regular.ttf');
+}
+
+@font-face {
+  font-family: $fancy-font-name;
+  src: url('/assets/fonts/Stalemate/Stalemate-Regular.ttf');
+}

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- <meta name="msvalidate.01" content="B13B694B0BB1C567E924AADC34039DCA" />
+    <meta name="google-site-verification" content="X_UU0KtJ_qxzrj7E2Mc6UvY2cBmiCr3jkvzzH6Bxtl8" /> -->
+  <meta name="HandheldFriendly" content="True">
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  <meta name="referrer" content="origin">
+  <meta property="og:site_name" content="{{ site.data.meta.blogTitle }}">
+  <meta name="twitter:card" content="summary">
+  <link rel="alternate" type="application/rss+xml" title="{{ site.data.meta.blogTitle }}" href="https://pinarydevelopment.com/feed.xml">
+
+  {% if page.layout == 'post' %}
+    <meta name="description" content="{{ page.excerpt | truncate: 255 }}">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="{{ page.title }}">
+    <meta property="og:description" content="{{ page.excerpt | truncate: 255 }}">
+    <meta property="og:url" content="{{ page.url }}">
+    <meta property="article:published_time" content="{{ page.date | date: '%Y-%m-%dT%I:%M:%S.0000000%z' }}">
+    {% if page.modifiedDate %}
+    <meta property="article:modified_time" content="{{ page.modifiedDate | date: '%Y-%m-%dT%I:%M:%S.0000000%z' }}">
+    {% endif %}
+    {% for category in page.categories %}
+    <meta property="article:tag" content="category">
+    {% endfor %}
+    <meta name="twitter:title" content="{{ page.title }}">
+    <meta name="twitter:description" content="{{ page.excerpt | truncate: 255 }}">
+    <meta name="twitter:url" content="{{ page.url }}">
+    <meta name="twitter:label1" content="Written by">
+    <meta name="twitter:data1" content="{{ page.title }}">
+    <meta name="twitter:label2" content="Filed under">
+    {% if page.categories.size != 0 %}<meta name="twitter:data2" content="{{ page.categories | join ', ' }}">{% endif %}
+    {% if page.previous %}
+    <link rel="prev" href="{{ page.previous.url }}">
+    {% endif %}
+    {% if page.next %}
+    <link rel="next" href="{{ page.next.url }}">
+    {% endif %}
+    <script type="application/ld+json">
+        {
+            "@@context": "http://schema.org",
+            "@@type": "Article",
+            "publisher": "{{ site.data.meta.blogTitle }}",
+            "author": {
+                "@@type": "Person",
+                "name": "@Constants.BlogTitle"@*,
+                "url": "@Constants.RootBlogUrl/author/peinearydevelopment/"*@
+            },
+            "headline": "{{ page.title }}",
+            "url": "{{ page.url }}",
+            "datePublished": "{{ page.date | date: '%Y-%m-%dT%I:%M:%S.0000000%z' }}",
+            {% if page.modifiedDate %}"dateModified": {{ page.modifiedDate | date: '%Y-%m-%dT%I:%M:%S.0000000%z' }},{% endif %}
+            {% if page.categories.size != 0 %}"keywords": "{{ page.categories | join ', ' }}",{% endif %}
+            "description": "{{ page.excerpt | truncate: 255 }}"
+        }
+    </script>
+  {% endif %}
+
+  <title>{{ site.data.meta.blogTitle }}{% if page.title %} - {{page.title}}{% endif %}</title>
+  <link rel="stylesheet" href="/main.css" />
+</head>
+
+<body>
+  <header>
+    <nav class="begin">
+      <a href="/" class="brand name">{{ site.data.meta.blogTitle }}</a>
+    </nav>
+    <span class="expand"></span>
+    <div class="end">
+      <a href="https://stackoverflow.com/users/1874522/peinearydevelopment">
+        <svg class="stack-overflow" viewBox="0 0 30 30">
+          <title>Stack Overflow</title>
+          <g>
+            <path class="so-base" d="M21 27v-8h3v11H0V19h3v8z"></path>
+            <path class="so-stack" d="M5.4 19.1l13.56 1.96.17-2.38-13.26-2.55-.47 2.97zm1.8-6.8l12 5.6 1.1-2.4-12-5.6-1.1 2.4zm3.4-5.9l10.2 8.5 1.7-2-10.2-8.5-1.7 2zM17.1.2L15 1.8l7.9 10.6 2.1-1.6L17.1.2zM5 25h14v-3H5v3z"></path>
+          </g>
+        </svg>
+      </a>
+      <a href="https://github.com/peinearydevelopment">
+        <svg class="github" viewBox="0 0 500 500">
+          <title>GitHub</title>
+          <g>
+            <path d="M256 0C114.64 0 0 114.61 0 256c0 113.09 73.34 209 175.08 242.9 12.8 2.35 17.47-5.56 17.47-12.34 0-6.08-.22-22.18-.35-43.54-71.2 15.49-86.2-34.34-86.2-34.34-11.64-29.57-28.42-37.45-28.42-37.45-23.27-15.84 1.73-15.55 1.73-15.55 25.69 1.81 39.21 26.38 39.21 26.38 22.84 39.12 59.92 27.82 74.5 21.27 2.33-16.54 8.94-27.82 16.25-34.22-56.84-6.43-116.6-28.43-116.6-126.49 0-27.95 10-50.8 26.35-68.69-2.63-6.48-11.42-32.5 2.51-67.75 0 0 21.49-6.88 70.4 26.24a242.65 242.65 0 0 1 128.18 0c48.87-33.13 70.33-26.24 70.33-26.24 14 35.25 5.18 61.27 2.55 67.75 16.41 17.9 26.31 40.75 26.31 68.69 0 98.35-59.85 120-116.88 126.32 9.19 7.9 17.38 23.53 17.38 47.41 0 34.22-.31 61.83-.31 70.23 0 6.85 4.61 14.81 17.6 12.31C438.72 464.97 512 369.08 512 256.02 512 114.62 397.37 0 256 0z"></path>
+          </g>
+        </svg>
+      </a>
+      <a href="/feed.xml">
+        <svg class="rss" viewBox="0 0 17 17">
+          <title>RSS Feed</title>
+          <g>
+            <path d="M2.4,2.4v2.367c7.086,0,12.83,5.746,12.83,12.832h2.369C17.599,9.205,10.794,2.4,2.4,2.4z M2.4,7.137v2.369  c4.469,0,8.093,3.623,8.093,8.094h2.368C12.861,11.822,8.177,7.137,2.4,7.137z M4.669,13.059c-1.254,0-2.27,1.018-2.27,2.271  s1.016,2.27,2.27,2.27s2.269-1.016,2.269-2.27S5.923,13.059,4.669,13.059z"></path>
+          </g>
+        </svg>
+      </a>
+    </div>
+  </header>
+  <!-- <div class="brand center">
+    <div class="full-height container column center">
+      <h1 class="brand name">@Constants.BlogTitle</h1>
+      <h1 class="tagline">@Constants.BlogTagLine</h1>
+    </div>
+  </div> -->
+
+  <main>
+    {{ content }}
+  </main>
+
+  <footer class="copyright">© 2016 - {{ site.time | date: '%Y' }} by&nbsp;<span class="brand name"> {{ site.data.meta.blogTitle }}</span>. All rights reserved.</footer>
+</body>
+
+</html>

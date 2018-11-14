@@ -1,0 +1,47 @@
+@import 'variables/fonts';
+@import 'variables/colors';
+
+/*
+  Overall site structure setup
+*/
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-family: $main-font-name, serif;
+  font-size: 14px;
+  min-height: 100vh;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+img {
+  max-width: 100%;
+}
+
+/*
+  Global styles
+*/
+
+.expand {
+  flex-grow: 1;
+}
+
+.brand {
+  &.name {
+    font-weight: 600;
+    text-decoration: none;
+  }
+}
+
+@import 'scaffolding';
+@import 'post';

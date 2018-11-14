@@ -1,0 +1,10 @@
+exclude:
+  - docker-compose.yml
+  - README.md
+  - notes.txt
+sass:
+    sass_dir: _sass
+url: "https://blog.pinarydevelopment.com"
+plugins:
+  - jekyll-sitemap
+  - jekyll-feed
