@@ -2,10 +2,13 @@ header {
   background-color: $black;
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.33);
   display: flex;
-  padding: 14px;
+  padding: 1em;
+  z-index: 1;
+  flex-wrap: wrap;
+  justify-content: center;
 
   nav {
-    font-size: 24px;
+    font-size: 1.25em;
   }
 
   .brand {
@@ -18,6 +21,9 @@ header {
     }
   }
 
+  > .expand {
+    flex-grow: 0;
+  }
 
   .begin {
     align-items: center;
@@ -28,6 +34,7 @@ header {
     display: flex;
     flex-basis: 108px;
     justify-content: space-around;
+    margin-top: .5em;
 
     svg {
       fill: $white;
@@ -45,7 +52,7 @@ header {
 
       &.github:hover {
         path {
-          fill: purple;
+          fill: $github-purple;
         }
       }
 
@@ -59,9 +66,10 @@ header {
 }
 
 main {
+  background-color: $white;
   flex-grow: 1;
   flex-shrink: 0;
-  padding: 14px;
+  padding: 1em;
 }
 
 footer {
@@ -69,11 +77,33 @@ footer {
   background-color: $black;
   color: $white;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  padding: 10px;
+  padding: .5em;
   white-space: nowrap;
 
   .name {
     color: $primary;
   }
 }
+
+@media (min-width: 768px) {
+  header {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+
+    > .expand {
+      flex-grow: 1;
+    }
+
+    > .end {
+      margin-top: 0;
+    }
+  }
+
+  main {
+    align-self: center;
+    width: 75%;
+  }
+}
+

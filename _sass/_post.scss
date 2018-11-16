@@ -2,10 +2,18 @@
   blockquote {
     background-color: $light-grey;
     border-left: 5px solid $primary;
-    font-size: 18px;
+    font-size: 1.25em;
     font-style: italic;
-    margin: 14px 0;
-    padding: 5px 0 5px 14px;
+    margin: 1em 0;
+    padding: 5px 1em;
+
+    > p {
+      line-height: 1.25em;
+    }
+  }
+
+  :not(blockquote) > p {
+    line-height: 1.5em;
   }
 
   p {
@@ -13,17 +21,17 @@
   }
 
   p + p {
-    margin-top: 14px;
+    margin-top: 1em;
   }
 
   aside {
     background-color: $light-primary;
     border-bottom: 1px solid $primary;
     border-top: 1px solid $primary;
-    font-size: 18px;
+    font-size: 1.25em;
     font-style: italic;
-    margin: 16px 0;
-    padding: 10px 0;
+    margin: 1em 0;
+    padding: .5em 0;
     text-align: center;
   }
 
@@ -41,12 +49,14 @@
     border-left: 5px solid #c25;
     border-right: 5px solid #c25;
     border-top: 1px solid #c25;
-    margin: 14px 0;
-    padding: 0 14px;
+    margin: 1em 0;
+    padding: 0 1em;
+    white-space: normal;
+    word-break: break-word;
   }
 
   hr {
-    margin: 14px 0;
+    margin: 1em 0;
   }
 
   a {
