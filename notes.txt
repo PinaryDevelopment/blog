@@ -1,3 +1,6 @@
 DateTime Formatting in Ruby: https://hackhands.com/format-datetime-ruby/
 Liquid Syntax: https://shopify.github.io/liquid/
 Jekyll Documentation: https://jekyllrb.com/
+
+
+// add styles for typescript, javascript, scss, json

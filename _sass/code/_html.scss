@@ -1,0 +1,35 @@
+/* VSCode Quite Light */
+.language-html {
+  color: #7a3e9d;
+
+  .err,
+  .nt {
+    color: #4B69CE;
+  }
+
+  .na {
+    color: #8190A0;
+  }
+
+  .s {
+    color: #448C27;
+  }
+}
+
+.dark {
+  /* VSCode Dark+ */
+  .language-html {
+    .err,
+    .nt {
+      color: #569CD0;
+    }
+
+    .na {
+      color: #9CDCFE;
+    }
+
+    .s {
+      color: #CE9178;
+    }
+  }
+}

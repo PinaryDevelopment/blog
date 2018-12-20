@@ -1,0 +1,65 @@
+code {
+  color: $red;
+}
+
+:not(pre) > code {
+  text-decoration: underline;
+}
+
+// https://codepen.io/peinearydevelopment/pen/BGGXBG
+pre {
+  background-color: #f5f5f5;
+  border-bottom: 1px solid #c25;
+  border-left: 5px solid #c25;
+  border-right: 5px solid #c25;
+  border-top: 1px solid #c25;
+  margin: 1em 0;
+  overflow-x: auto;
+  padding: 0 1em;
+  word-break: break-word;
+}
+
+figure {
+  background-color: #f5f5f5;
+
+  pre {
+    border: 0;
+    padding: 0;
+  }
+
+  &.highlight {
+    border-bottom: 1px solid #c25;
+    border-left: 5px solid #c25;
+    border-right: 5px solid #c25;
+    border-top: 1px solid #c25;
+    margin: 10px 0;
+    padding: 10px 10px 10px 0;
+  }
+
+  pre {
+    margin: 0;
+  }
+
+  .lineno {
+    color: #6D705B;
+    margin: 0 10px 0 5px;
+  }
+}
+
+.dark {
+  figure {
+    background-color: #1E1E1E;
+
+    .lineno {
+      color: #828282;
+    }
+  }
+}
+
+@import 'cmd';
+@import 'csharp';
+@import 'html';
+@import 'javascript';
+@import 'json';
+@import 'sass';
+@import 'typescript';

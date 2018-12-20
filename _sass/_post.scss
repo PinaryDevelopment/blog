@@ -35,26 +35,6 @@
     text-align: center;
   }
 
-  code {
-    color: $red;
-  }
-
-  :not(pre) > code {
-    text-decoration: underline;
-  }
-
-  pre {
-    background-color: #efefef;
-    border-bottom: 1px solid #c25;
-    border-left: 5px solid #c25;
-    border-right: 5px solid #c25;
-    border-top: 1px solid #c25;
-    margin: 1em 0;
-    overflow-x: auto;
-    padding: 0 1em;
-    word-break: break-word;
-  }
-
   hr {
     margin: 1em 0;
   }
@@ -62,5 +42,29 @@
   a {
     color: $grey;
     text-decoration: underline dashed;
+  }
+
+  table:not(.rouge-table) {
+    border: 1px solid #aaa;
+    border-collapse: collapse;
+    margin: .5em 0 1em;
+
+    th {
+      padding-bottom: 2px;
+      border-bottom: 2px dashed
+        #aaa;
+    }
+
+    tr {
+      border-bottom: 1px solid #aaa;
+    }
+
+    tr:nth-child(odd) {
+      background: #fff;
+    }
+
+    tr:nth-child(even) {
+      background: #eee;
+    }
   }
 }

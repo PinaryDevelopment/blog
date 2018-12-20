@@ -1,0 +1,91 @@
+/* VSCode Quite Light */
+.language-csharp {
+  .c1,
+  .cm {
+    color: #ABAEB3;
+  }
+
+  .err {
+    display: none;
+  }
+
+  .k,
+  .kt {
+    color: #4B69C6;
+  }
+
+  .m {
+    color: #9C5D27;
+  }
+
+  // .n {
+  //   color: #3B3D45; //variable/property name
+  // }
+
+  .n,
+  .na {
+    color: #7a3e9d; // types
+  }
+
+  .nf {
+    color: #AA3731;
+    font-weight: bold;
+  }
+
+  .nc,
+  .nn {
+    color: #7a3e9d;
+    font-weight: bold;
+  }
+
+  .p {
+    color: #7E7E7E;
+  }
+
+  .s {
+    color: #448C27;
+  }
+}
+
+.dark {
+  /* VSCode Dark+ */
+  .language-csharp {
+    .c1,
+    .cm {
+      color: #699849;
+    }
+
+    .k,
+    .kt {
+      color: #509CD6;
+    }
+
+    .m {
+      color: #B4CBA3;
+    }
+
+    .n,
+    .na {
+      color: #9BD9F9;
+    }
+
+    .nf {
+      color: #DBD395;
+      font-weight: normal;
+    }
+
+    .nc,
+    .nn {
+      color: #4CC9A4;
+      font-weight: normal;
+    }
+
+    .p {
+      color: #D0D0D0;
+    }
+
+    .s {
+      color: #CE9178;
+    }
+  }
+}

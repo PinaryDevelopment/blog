@@ -1,8 +1,8 @@
 ---
 layout: post
 permalink: /byte-sized/c-sharp/variables-I
-title: 'Byte-sized C# Programming: Variables'
-excerpt: 'C# topics: What is a variable? How do I program with variables? What does it mean when I declare and assign values to variables?'
+title: "Byte-sized C# Programming: Variables"
+excerpt: "C# topics: What is a variable? How do I program with variables? What does it mean when I declare and assign values to variables?"
 categories: ['byte-sized', 'c#', 'variables']
 ---
 
@@ -24,11 +24,9 @@ One might attempt to do this by writing: `"Computer, give me space for a mileage
 
 For our example, the mileage variable declaration could look like this:
 
-<pre>
-<code>
+{% highlight csharp linenos=table %}
 int employeesMileage = 0;
-</code>
-</pre>
+{% endhighlight %}
 
 > I thought you said that "when we write code, we write something that a person could read". I recognize the words: employee's & mileage *AND* I see the number `0`, but it still looks like gibberish, what gives?
 
@@ -53,11 +51,9 @@ Now imagine, the program we created for the CEO has been running for a year and 
 
 The obvious first step would be to create another variable. We would do this in the same way we did above.
 
-<pre>
-<code>
+{% highlight csharp linenos=table %}
 int employeesMonthlyAverage = 0;
-</code>
-</pre>
+{% endhighlight %}
 
 Now imagine a scenario where at the end of the year, the company has employees with the following statistics.
 
@@ -88,11 +84,9 @@ Variables is a large topic and there is a lot more we could discuss. For now tho
 
 That can be accomplished through an 'assignment operator'. While we will get to operators in another article, for now, you can think of the `=` sign as the way you can tell the program to store a certain value in a certain container. For instance, when we are declaring the variable(as above), we can assign a value to it.
 
-<pre>
-<code>
+{% highlight csharp linenos=table %}
 decimal employeesMonthlyAverage = 2502.5;
-</code>
-</pre>
+{% endhighlight %}
 
 In this line of code:
  - We create a variable named `employeesMonthlyAverage`.
@@ -102,11 +96,9 @@ In this line of code:
 
 When the next year comes around and the average needs to be updated to reflect the current years average instead of last years, all we have to do is
 
-<pre>
-<code>
+{% highlight csharp linenos=table %}
 employeesMonthlyAverage = 5000;
-</code>
-</pre>
+{% endhighlight %}
 
 You will notice that the `decimal` is gone from our statement. At this point, we don't need to request another container from the computer or tell the program how to interpret the value stored in that container as that was done in the initial declaration of the variable. Now all we want to do is tell the computer to store a new value there. In this case that value is `5000`. Apparently our employee has been on the road much more this year, possibly due to the rewards program we have helped create for the company.
 

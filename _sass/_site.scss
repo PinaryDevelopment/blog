@@ -45,5 +45,34 @@ img {
   }
 }
 
+#logo {
+  &.x-lg {
+    font-size: 250px;
+    font-family: 'Calisto MT';
+    height: 225px;
+    margin-right: -12px;
+
+    #logo-p-shadow {
+      transform: translate(15px, 165px);
+    }
+
+    #logo-p {
+      fill: $primary;
+      transform: translate(18px, 168px);
+    }
+
+    #logo-d-shadow {
+      transform: translate(270px, 55px) scale(-1);
+    }
+
+    #logo-d {
+      transform: translate(273px, 58px) scale(-1);
+      fill: $secondary;
+    }
+  }
+}
+
 @import 'scaffolding';
+@import 'home';
 @import 'post';
+@import 'code/code';

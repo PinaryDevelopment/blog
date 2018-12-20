@@ -1,0 +1,27 @@
+---
+layout: post
+permalink: /fullstack/multi-themed-application/the-task-at-hand
+title: "Multi-themed Web Project"
+excerpt: Describing the problems involved in creating one web application with multiple themes.
+categories: ['Angular', 'Semantic UI', 'ASP.NET', 'ASP.NET Core', 'architecture']
+---
+
+### The task at hand
+I was tasked with creating a website for a company where they wanted to sell licenses to utilize their software to other organizations and each organization should have the ability to 'skin' the UI to match their organizational brand. The idea being, the data that this company owns is what lends most of the value to its software. Each organization that purchases a license to utilize the software is really interested in the data it provides, but would like its users to see that data displayed in a manner consistent with their internal organizational brand. There are a few different approaches that could be taken to this problem. I hope to detail the one I've taken and some of the decisions I've made along the way to enable this path.
+
+### Initial thoughts
+To begin, my goal was to create one code-base that would be able to dynamically load a view and/or stylesheets per licensing organization. The company which this application was being developed for is a .NET shop and as each licensing organization wants to utilize its brand, the understanding is that each licensing organization would set up a DNS entry to point at one of our IP addresses. That being the case, we could have easily setup multiple websites in IIS, each with its own binding and code base. This could be accomplished still utilizing a number of code sharing techniques such as git branches or specialized code bundling steps upon completion of code compilation. The thought of how easily each of these code branches could get out of sync as well as the api/db considerations that would come along with any modifications were the biggest discouraging factors with that approach.
+
+To accomplish these aims, required some thought and planning on the back-end of the website as well as the front-end. For this project we are utilizing the following(high-level) technology stack: [Angular](https://angular.io/), [SCSS](http://sass-lang.com/), [Semantic-UI](https://semantic-ui.com/), [ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/), MS Sql and [Visual Studio Team Services](https://www.visualstudio.com/team-services/).
+
+### Back-end design decisions
+Starting at the data access layer, I've seen different approaches to a similar type of setup. There are those that would prefer to have a separate set of databases for each client. Ostensibly this is to keep the data sets smaller, queries faster and data segregated due to privacy concerns. Most of the information that the licensing organization was exposing was going to be through a publicly accessible website and there were potential requirements down the line to create a combined site for multiple clients. These pieces in mind, the decision was made to keep all of the various clients' data in one set of sql tables, requiring a concerted effort regarding data access layer logic to ensure that only the proper data get returned per organization and user.
+
+Moving up a layer, the decision was made to utilize ASP.NET Core MVC and a special build step to enable the dynamic loading of the initial landing page based on the organization being served. The default build with the Angular CLI produces an index file with the bundled JavaScript files injected as script tags into the HTML. This file is then utilized as the template for all of the organizational specific landing pages which have their skin information injected into it as well. The organization is tracked as part of the security principal and the main landing page is routed to through a convention based naming schema that is utilized throughout the project for a variety of organization specific files. This structure even allowed us to create a demo landing page for sales where they could choose from a list of organizations to demonstrate the power of the skinning ability provided with the product.
+
+### Front-end design decisions
+The main front-end considerations to date have revolved around the css frameworks/preprocessors that are being utilized as well as a few custom build steps. As the application develops, the expectation will be that some of the HTML components will be dynamically revealed/hidden based on organizational settings, but to date, those particular issues haven't been addressed.
+
+Semantic-UI was chosen as the css framework due to the [powerful theming capabilities](https://semantic-ui.com/usage/theming.html) it presents out of the box. As will be discussed in a later post, the build step that enabled this to work as intended was a bit more involved than I had hoped. I'm using NPM scripts to perform most of the front-end tasks. Semantic-UI provides its build steps through Gulp and it took a bit of trickery to get the multiple themes to build with one build step. The team also decided to utilize SCSS as a css preprocessor for all the additional css rules we had to provide to that were site specific or needed to fill the 'gap' in some of Semantic's stylesheets.
+
+This is an ongoing, exciting project that has really enabled me to test my creativity and get to know a few of the tools I use regularly much more intimately. I look forward to sharing some of the discoveries I've had along the way in upcoming posts.

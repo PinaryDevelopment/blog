@@ -1,10 +1,11 @@
 ---
 layout: default
+mainClass: post
 ---
 
 <h1>{{ page.title }}</h1>
-Published: {{ page.date | date: '%B %d, %Y' }}
+<span>Published: {{ page.date | date: '%B %d, %Y' }}</span>
 
-<section class="post">{{ content }}</section>
+<section>{{ content }}</section>
 
 

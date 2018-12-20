@@ -1,13 +1,13 @@
 $black: #000;
-// $lighter-gray: #ddd;
-// $light-gray: #bbb;
-$grey: #888;
-// $dark-gray: #444;
-$light-primary: #cde3ec;
-$primary: #007bab;
-$light-grey: #efefef;
-$red: #c25;
 $white: #fff;
+$light-grey: #efefef;
+$shadow: #ddd;
+$grey: #888;
+$dark-gray: #444;
+$primary: #527ECD;
+$light-primary: mix($white, $primary, 50%);
+$secondary: #C8D56E;
+$red: #c25;
 
 $stack-overflow-gray: #bcbbbb;
 $stack-overflow-orange: #f48024;

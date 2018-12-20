@@ -1,0 +1,6 @@
+Mentioned in c-sharp/micro-services/base-class-libraries/blueprints
+  EF and change tracking: https://github.com/peinearydevelopment/EntityFramework6WithAView
+  search/find/filter for EF objects: https://github.com/PdFramework/Filtering
+
+
+Still looking at: /frontend/frameworks/aurelia/bootstrap-datepicker-with-typescript-and-jspm

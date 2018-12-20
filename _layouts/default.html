@@ -41,7 +41,7 @@
     <meta name="twitter:label1" content="Written by">
     <meta name="twitter:data1" content="{{ page.title }}">
     <meta name="twitter:label2" content="Filed under">
-    {% if page.categories.size != 0 %}<meta name="twitter:data2" content="{{ page.categories | join ', ' }}">{% endif %}
+    {% if page.categories.size != 0 %}<meta name="twitter:data2" content="{{ page.categories | join: ', ' }}">{% endif %}
     {% if page.previous %}
     <link rel="prev" href="{{ page.previous.url }}">
     {% endif %}
@@ -113,7 +113,13 @@
     </div>
   </div> -->
 
+  {% if page.mainClass %}
+  <main class="{{page.mainClass}}">
+  {% elsif layout.mainClass %}
+  <main class="{{layout.mainClass}}">
+  {% else %}
   <main>
+  {% endif %}
     {{ content }}
   </main>
 
