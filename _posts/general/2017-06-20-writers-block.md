@@ -2,6 +2,7 @@
 layout: post
 permalink: /writers-block
 title: "Writer's Block"
+excerpt: I've been working on quite a number of things lately that I've found very exciting and have found it quite frustrating that I haven't <del>found</del> made the time to write about them.
 ---
 
 I've been working on quite a number of things lately that I've found very exciting and have found it quite frustrating that I haven't ~~found~~ made the time to write about them.

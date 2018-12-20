@@ -8,3 +8,5 @@ url: "https://blog.pinarydevelopment.com"
 plugins:
   - jekyll-sitemap
   - jekyll-feed
+  - jekyll-paginate
+paginate: 10

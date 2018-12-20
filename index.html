@@ -3,40 +3,61 @@ layout: default
 mainClass: home
 ---
 
-{% for post in site.posts %}
-  {% assign loopindex = forloop.index %}
-  {% if loopindex <= 4 %}
-    <a class="card" href="{{ post.url }}">
-      <h3 class="post-title">{{ post.title }}</h3>
-      <div class="post-date">Published: {{ post.date | date: '%B %d, %Y' }}</div>
-      <p class="post-snippet">{{ post.excerpt | truncate: 255 }}</p>
-    </a>
-  {% endif %}
-{% endfor %}
+<div class="posts">
+  {% for post in paginator.posts %}
+    {% assign loopindex = forloop.index %}
+    {% if loopindex <= 4 %}
+      <a class="card" href="{{ post.url }}">
+        <h3 class="post-title">{{ post.title }}</h3>
+        <div class="post-date">Published: {{ post.date | date: '%B %d, %Y' }}</div>
+        <p class="post-snippet">{{ post.excerpt | truncate: 255 }}</p>
+      </a>
+    {% endif %}
+  {% endfor %}
 
-<div class="svg-wrapper">
-  <svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" id="logo" class="x-lg">
-    <text id="logo-p-shadow">
-      <tspan>p</tspan>
-    </text>
-    <text id="logo-p">
-      <tspan>p</tspan>
-    </text>
-    <text id="logo-d-shadow">
-      <tspan>p</tspan>
-    </text>
-    <text id="logo-d"><tspan>p</tspan></text>
-  </svg>
-  <div class="tagline">a <span class="secondary">class</span> above <span class="primary">binary</span></div>
+  <div class="svg-wrapper">
+    <svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" id="logo" class="x-lg">
+      <text id="logo-p-shadow">
+        <tspan>p</tspan>
+      </text>
+      <text id="logo-p">
+        <tspan>p</tspan>
+      </text>
+      <text id="logo-d-shadow">
+        <tspan>p</tspan>
+      </text>
+      <text id="logo-d"><tspan>p</tspan></text>
+    </svg>
+    <div class="tagline">a <span class="secondary">class</span> above <span class="primary">binary</span></div>
+  </div>
+
+  {% for post in paginator.posts %}
+    {% assign loopindex = forloop.index %}
+    {% if loopindex > 4 %}
+      <a class="card" href="{{ post.url }}">
+        <h3 class="post-title">{{ post.title }}</h3>
+        <div class="post-date">Published: {{ post.date | date: '%B %d, %Y' }}</div>
+        <p class="post-snippet">{{ post.excerpt | truncate: 255 }}</p>
+      </a>
+    {% endif %}
+  {% endfor %}
 </div>
 
-{% for post in site.posts %}
-  {% assign loopindex = forloop.index %}
-  {% if loopindex > 4 %}
-    <a class="card" href="{{ post.url }}">
-      <h3 class="post-title">{{ post.title }}</h3>
-      <div class="post-date">Published: {{ post.date | date: '%B %d, %Y' }}</div>
-      <p class="post-snippet">{{ post.excerpt | truncate: 255 }}</p>
-    </a>
+
+{% if paginator.total_pages > 1 %}
+<nav class="pagination" role="navigation">
+  {% if paginator.previous_page %}
+    <a class="previous" href="{{ paginator.previous_page_path | relative_url }}">Prev</a>
+  {% else %}
+    <span class="previous">&nbsp;</span>
   {% endif %}
-{% endfor %}
+
+  <span class="page-number">Page {{paginator.page}} of {{paginator.total_pages}}</span>
+
+  {% if paginator.next_page %}
+    <a class="next" href="{{ paginator.next_page_path | relative_url }}">Next</a>
+  {% else %}
+    <span class="next">&nbsp;</span>
+  {% endif %}
+</nav>
+{% endif %}

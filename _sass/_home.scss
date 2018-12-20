@@ -1,4 +1,14 @@
 .home {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+
+  .posts {
+    align-content: space-evenly;
+    padding: .5em 1em;
+    flex-grow: 1;
+  }
+
   .svg-wrapper {
     display: none;
   }
@@ -58,13 +68,64 @@
       text-decoration-line: underline;
     }
   }
+
+  nav {
+    display: flex;
+    font-size: 16px;
+    grid-column-start: span 3;
+    padding: 10px 1em;
+
+    .page-number,
+    .previous,
+    .next {
+      flex: 1 1 0;
+    }
+
+    a.previous {
+      text-align: left;
+      border-left: 5px solid $light-primary;
+      border-radius: 15px;
+      color: $primary;
+      padding: .25em 0 .25em 25px;
+
+      &:hover {
+        border-left: 5px solid $primary;
+        box-shadow: 5px 6px 5px 0 $shadow;
+      }
+    }
+
+    .page-number {
+      padding: .25em 10px;
+      text-align: center;
+    }
+
+    a.next {
+      text-align: right;
+      border-right: 5px solid $light-primary;
+      border-radius: 15px;
+      color: $primary;
+      padding: .25em 25px .25em 0;
+
+      &:hover {
+        border-right: 5px solid $primary;
+        box-shadow: 5px 6px 5px 0 $shadow;
+      }
+    }
+  }
 }
 
 @media screen and (min-width: 768px) {
-  main.home {
+  nav {
+    font-size: 1em;
+  }
+
+  .home{
+    width: 100%;
+  }
+
+  .posts {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    width: 100%;
   }
 
   .home .svg-wrapper {
@@ -77,9 +138,11 @@
     width: 340px;
     justify-content: center;
     box-shadow: 5px 5px 5px $grey;
-    grid-row-start: span 2;
+    grid-row-start: 2;
+    grid-row-end: span 2;
     justify-self: center;
     align-self: center;
+    grid-column-start: 2;
   }
 }
 
@@ -88,7 +151,7 @@
     font-size: 20px;
   }
 
-  main.home {
+  .home {
     width: 75%;
   }
 }
