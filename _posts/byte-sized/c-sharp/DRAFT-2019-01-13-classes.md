@@ -1,1 +1,0 @@
-As mentioned in the previous article, the code that we write is read by another program that in turn creates instructions that the computer can read. To make our code ()[https://docs.microsoft.com/en-us/dotnet/core/get-started]
