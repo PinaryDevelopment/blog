@@ -42,6 +42,69 @@ img {
   &.name {
     font-weight: 600;
     text-decoration: none;
+
+    /* i animation: https://codepen.io/alichur/pen/vYYLdej */
+    .box {
+      display: inline-block;
+    }
+
+    .letter {
+        text-align : center;
+        margin     : 0;
+        font-weight: bold;
+        color      : white;
+        line-height: 0.55;
+
+        &.inverse {
+          color: #527ECD;
+        }
+    }
+
+    @keyframes color-change {
+        from {
+            color: white;
+        }
+
+        to {
+            color: #527ECD;
+        }
+    }
+
+    @keyframes inverse-color-change {
+      from {
+          color: #527ECD;
+      }
+
+      to {
+          color: white;
+      }
+  }
+
+    @keyframes bounce {
+        from {
+            transform: translate3d(0, 0, 0);
+        }
+
+        to {
+            transform: translate3d(0, -10px, 0);
+        }
+    }
+
+    .animate {
+        // color    : white;
+        animation: color-change 2s infinite alternate, bounce 0.4s infinite alternate;
+    }
+
+    // .inverse {
+    //   // color    : #527ECD;
+    //   animation: inverse-color-change 2s infinite alternate, bounce 0.4s infinite alternate;
+    // }
+
+    @media (prefers-reduced-motion: reduce) {
+      .animate {
+        animation: none;
+      }
+    }
   }
 }
 

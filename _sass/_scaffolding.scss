@@ -2,13 +2,13 @@ header {
   background-color: $black;
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.33);
   display: flex;
-  padding: 1em;
+  padding: .5em 1em 1em;
   z-index: 1;
   flex-wrap: wrap;
   justify-content: center;
 
   nav {
-    font-size: 1.25em;
+    font-size: 1.35em;
   }
 
   .brand {
@@ -35,6 +35,10 @@ header {
     flex-basis: 108px;
     justify-content: space-around;
     margin-top: .5em;
+
+    > a {
+      align-self: flex-end;
+    }
 
     svg {
       fill: $white;
