@@ -62,7 +62,7 @@
             "url": "{{ page.url }}",
             "datePublished": "{{ page.date | date: '%Y-%m-%dT%I:%M:%S.0000000%z' }}",
             {% if page.modifiedDate %}"dateModified": {{ page.modifiedDate | date: '%Y-%m-%dT%I:%M:%S.0000000%z' }},{% endif %}
-            {% if page.categories.size != 0 %}"keywords": "{{ page.categories | join ', ' }}",{% endif %}
+            {% if page.categories.size != 0 %}"keywords": "{{ page.categories | join: ', ' }}",{% endif %}
             "description": "{{ page.excerpt | truncate: 255 }}"
         }
     </script>

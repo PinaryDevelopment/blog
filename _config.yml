@@ -10,3 +10,5 @@ plugins:
   - jekyll-feed
   - jekyll-paginate
 paginate: 10
+title: Pinary Development - A class above binary
+repository: PinaryDevelopment/blog
