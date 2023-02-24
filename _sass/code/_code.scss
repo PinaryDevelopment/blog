@@ -6,6 +6,10 @@ code {
   text-decoration: underline;
 }
 
+a > code {
+  text-decoration: underline dashed;
+}
+
 // https://codepen.io/peinearydevelopment/pen/BGGXBG
 pre {
   background-color: #f5f5f5;

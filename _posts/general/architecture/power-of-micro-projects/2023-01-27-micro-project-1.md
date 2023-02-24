@@ -3,7 +3,7 @@ layout: post
 permalink: /architecture/the-power-of-micro-projects/micro-projects/1/data-model-exploration-and-blob-storage
 title: "The Story Behind the Application - Micro-project 1"
 excerpt: 'Micro-project #1 in the series explores iterating on the utilization of Azure storage for the audio files and exploring some of the data modeling needed for the project.'
-categories: ['C#', 'micro-projects', 'architecture', 'patterns']
+categories: ['C#', 'micro-projects', 'architecture', 'patterns', 'Azure', 'Azure blob storage']
 ---
 
 <aside>Starting any software development task has the potential to be daunting. There are a million details to be worked out, from business logic to technical details, implementation details to validation that all of the above works in tandem as expected. The process of going from ideation to delivery can be daunting. I'm taking a number of posts to walk through the development process I used to create a product from scratch. Attempting to discuss each stage of the process and document the approach I took to iteration and delivery.</aside>
@@ -69,4 +69,4 @@ I was able to ignore a number of things that could've been distractions from thi
 2. I ignored the retrieval of files.
 3. I didn't need to concern myself with the user interface and the validation concerns that would be much more relevant if the data was coming from the user.
 
-With proof of concept one out of the way, I had something of value, that took me one step closer to my initial launch goal and allowed me to move on to problem #2, namely utilizing an Azure function to perform file manipulation to reduce the sampling size and file size of each audio file.
+With the proof of concept one out of the way, I had something of value, that took me one step closer to my initial launch goal and allowed me to move on to problem #2, namely utilizing an Azure function to perform file manipulation to reduce the sampling size and file size of each audio file.
