@@ -1,0 +1,5 @@
+Lea Verou -> css variables, 'space-toggle': https://www.youtube.com/watch?v=ZuZizqDF4q8
+Simon Sinek -> on leadership: https://www.youtube.com/watch?v=RyTQ5-SQYTo
+Amy Hupe -> building systems(design): https://amyhupe.co.uk/articles/building-conscious-design-systems/
+Michael Chan - knowing things in development, imposter syndrome, patterns and practices: https://www.youtube.com/watch?v=-NP_upexPFg
+https://colordesigner.io/gradient-generator
